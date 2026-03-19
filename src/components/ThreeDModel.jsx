@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, TorusKnot, Environment } from '@react-three/drei';
+import { OrbitControls, TorusKnot, Environment, ContactShadows } from '@react-three/drei';
 
 const AnimatedShape = () => {
   const meshRef = useRef();
@@ -40,11 +40,14 @@ const ThreeDModel = () => {
 
       <div style={{ width: '100%', height: '100%', cursor: 'grab' }}>
         <Canvas camera={{ position: [0, 0, 40], fov: 50 }}>
-          <ambientLight intensity={0.5} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
-          <AnimatedShape />
-          <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={2.0} />
-          <Environment preset="city" />
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.5} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
+            <AnimatedShape />
+            <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={2.0} />
+            <Environment preset="city" />
+            <ContactShadows position={[0, -20, 0]} opacity={0.4} scale={40} blur={2.5} far={40} />
+          </Suspense>
         </Canvas>
       </div>
     </div>
