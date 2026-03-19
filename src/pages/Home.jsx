@@ -4,7 +4,6 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import CustomCursor from '../components/CustomCursor';
-import ThreeDModel from '../components/ThreeDModel';
 import TerminalEasterEgg from '../components/TerminalEasterEgg';
 import Timeline from '../components/Timeline';
 
@@ -48,7 +47,6 @@ const Home = () => {
         <main className="main-content" style={{ marginTop: '3rem' }}>
           <TerminalEasterEgg />
           <Projects />
-          <ThreeDModel />
           <Timeline />
           <Skills />
         </main>
