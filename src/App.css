@@ -271,6 +271,46 @@
   transition: transform 0.3s ease;
 }
 
+/* Responsive Timeline Fixes */
+@media (max-width: 768px) {
+  .holo-timeline-container::before {
+    left: 20px !important;
+    transform: none !important;
+  }
+
+  .laser-axis {
+    left: 20px !important;
+    transform: none !important;
+  }
+
+  .holo-timeline-row {
+    justify-content: flex-start !important;
+    padding-left: 50px !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .quantum-node {
+    left: 20px !important;
+  }
+
+  .holo-connector {
+    display: none !important;
+  }
+
+  .holo-card-container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .holo-card-inner h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .holo-card-inner h4 {
+    font-size: 0.95rem !important;
+  }
+}
+
 /* Projects Section Premium Tweaks */
 .project-card {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);

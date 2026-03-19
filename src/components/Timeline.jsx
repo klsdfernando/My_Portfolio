@@ -119,13 +119,15 @@ const HoloCard = ({ item, isLeft }) => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
+        className="holo-card-container"
         style={{ 
           width: 'calc(50% - 50px)', 
           zIndex: 1,
           transformStyle: 'preserve-3d',
           transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) ${isHovered ? 'translateZ(30px)' : 'translateZ(0)'}`,
           transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)',
-          cursor: 'crosshair'
+          cursor: 'crosshair',
+          position: 'relative'
         }}
       >
         <div 
@@ -245,17 +247,20 @@ const Timeline = () => {
       <div className="holo-timeline-container" style={{ position: 'relative', maxWidth: '1000px', margin: '0 auto', zIndex: 1 }}>
         
         {/* Core Laser Axis */}
-        <div style={{
-          position: 'absolute',
-          left: '50%',
-          top: 0,
-          bottom: 0,
-          width: '2px',
-          transform: 'translateX(-50%)',
-          background: 'linear-gradient(to bottom, transparent, var(--accent-cyan), var(--accent-purple), transparent)',
-          boxShadow: '0 0 10px var(--accent-cyan), 0 0 20px var(--accent-purple)',
-          opacity: 0.6
-        }}>
+        <div 
+          className="laser-axis"
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: 0,
+            bottom: 0,
+            width: '2px',
+            transform: 'translateX(-50%)',
+            background: 'linear-gradient(to bottom, transparent, var(--accent-cyan), var(--accent-purple), transparent)',
+            boxShadow: '0 0 10px var(--accent-cyan), 0 0 20px var(--accent-purple)',
+            opacity: 0.6
+          }}
+        >
           {/* Energy Pulses on the Laser */}
           <div className="laser-pulse" style={{ position: 'absolute', top: 0, left: '-2px', width: '6px', height: '100px', background: 'linear-gradient(to bottom, transparent, #fff, transparent)', filter: 'blur(2px)', opacity: 0.8 }} />
           <div className="laser-pulse delay-2" style={{ position: 'absolute', top: 0, left: '-2px', width: '6px', height: '50px', background: 'linear-gradient(to bottom, transparent, #00ffcc, transparent)', filter: 'blur(1px)', opacity: 0.9 }} />
