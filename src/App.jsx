@@ -1,0 +1,20 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+
+// Pages
+import Home from './pages/Home';
+import Contributions from './pages/Contributions';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contributions" element={<Contributions />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;

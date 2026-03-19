@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-primary: #0a0b1a; /* Dark blue/purple */
+  --bg-secondary: #13142c;
+  --glass-bg: rgba(20, 22, 53, 0.4);
+  --glass-border: rgba(140, 150, 255, 0.2);
+  --glass-highlight: rgba(180, 200, 255, 0.5);
+  
+  --text-primary: #e6e8ff;
+  --text-secondary: #9aa1d3;
+  --accent-cyan: #00f0ff;
+  --accent-purple: #9d00ff;
+  --accent-pink: #ff007f;
+  
+  --font-main: 'Inter', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(157, 0, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.08) 0%, transparent 50%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Utilities */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(140, 150, 255, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), 0 0 20px rgba(157, 0, 255, 0.2);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Typography styles */
+h1, h2, h3, h4 {
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--text-primary), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(to right, var(--text-primary), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* PCB Trace effect for dividers or decorative elements */
+.pcb-trace {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  width: 100%;
+  margin: 2rem 0;
+  position: relative;
+  opacity: 0.5;
+}
+
+.pcb-trace::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--glass-border);
+}
+/* Responsive Utilities */
+.short-name { display: none; }
+
+@media (max-width: 768px) {
+  .full-name { display: none; }
+  .short-name { display: inline; }
+  
+  .hero-title {
+    font-size: 2.2rem !important;
+    min-height: 140px !important; /* Slightly more for more lines on mobile */
+  }
+
+  /* Adjust header gap on mobile if needed */
+  header div:last-child {
+    gap: 1rem !important;
+  }
+}
