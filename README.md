@@ -1,4 +1,4 @@
-# Terminal Portfolio // Sushan Fernando
+# Terminal Portfolio -> Sushan Fernando
 
 A high-performance, cyberpunk-inspired professional portfolio built with a focus on speed, aesthetics, and agentic coding principles.
 
