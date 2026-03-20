@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import voidTunnelImg from '../assets/4.png';
 import cineStreamImg from '../assets/3.png';
 import centraAiImg from '../assets/1.png';
+import nebulaIdeImg from '../assets/2.png';
 
 const projectsData = [
   {
@@ -23,7 +24,9 @@ const projectsData = [
     tech: ['Multi Agentic System', 'LORA/QLORA', 'VSCode Fork'],
     type: 'MACHINE_LEARNING',
     link: '#',
-    imageType: 'ai'
+    imageType: 'ai',
+    image: nebulaIdeImg,
+    effectColor: '255, 120, 0' // Orange
   },
   {
     title: 'CineStream : Movie Streaming Platform',
@@ -104,7 +107,7 @@ const Projects = () => {
                     top: 0,
                     left: 0,
                     zIndex: 0,
-                    filter: 'sepia(1) saturate(3) hue-rotate(-45deg)'
+                    filter: `sepia(1) saturate(2) ${project.title.includes('Nebula') ? 'hue-rotate(10deg)' : 'hue-rotate(-45deg)'}`
                   }} 
                 />
               )}

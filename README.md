@@ -1,16 +1,25 @@
-# React + Vite
+# Terminal Portfolio // Sushan Fernando
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, cyberpunk-inspired professional portfolio built with a focus on speed, aesthetics, and agentic coding principles.
 
-Currently, two official plugins are available:
+## 🚀 Technologies
+This site was built from the ground up using modern web technologies:
+*   **React 19**: Specialized hooks and component architecture.
+*   **Vite**: For lightning-fast builds and optimized deployments.
+*   **Framer Motion**: Powering the advanced 3D transitions and micro-animations.
+*   **Lucide Icons**: Clean, consistent system iconography.
+*   **Custom CSS**: Tailored "Glassmorphism" and "Cyber" visual effects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Key Features
+*   **Dynamic Typing Effect**: Interactive hero section with professional role rotations.
+*   **Responsive Timeline**: Fully adaptive education history for all device sizes.
+*   **System Log Integration**: Real-time project status and technology stack visualization.
+*   **Automated Deployment**: Integrated GitHub Actions for seamless delivery to `sushanfer.dev`.
 
-## React Compiler
+## 📂 Project Structure
+*   `src/components`: Modular UI components like Hero, Projects, and Timeline.
+*   `src/assets`: Optimized images and branding assets.
+*   `src/pages`: Main application entry points.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+**Created by klsdfernando**
