@@ -44,8 +44,9 @@ const Hero = () => {
           }}
             onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
             onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Deploy Project
+            View Projects
           </button>
 
           <button style={{
@@ -65,6 +66,7 @@ const Hero = () => {
             onMouseOut={(e) => {
               e.currentTarget.style.background = 'transparent';
             }}
+            onClick={() => window.open('https://github.com/klsdfernando', '_blank')}
           >
             View GitHub
           </button>
